@@ -20,10 +20,9 @@ $( document ).ready(function() {
       url: cityURL,
       method: 'GET',
     }).then(function(response) {
-      console.log(response);
       $('.city-card').empty();
       const $cityName = $('<h3>').text(response.name);
-      const $temp = $('<p>').text('Temp: ' + response.main.temp + ' °F');
+      const $temp = $('<p>').text('Temp: ' + response.main.temp + '°F');
       const $humidity = $('<p>').text('Humidity: ' + response.main.humidity + '%');
       const $speed = $('<p>').text('Wind Speed: ' + response.wind.speed + ' MPH');
       $('.city-card').append($cityName, $temp, $humidity, $speed);
@@ -40,11 +39,11 @@ $( document ).ready(function() {
       const day3Date = $('<h5>').text(response.list[16].dt_txt.slice(5, 10));
       const day4Date = $('<h5>').text(response.list[24].dt_txt.slice(5, 10));
       const day5Date = $('<h5>').text(response.list[32].dt_txt.slice(5, 10));
-      const day1Temp = $('<p>').text('Temp: ' + response.list[0].main.temp + ' °F');
-      const day2Temp = $('<p>').text('Temp: ' + response.list[8].main.temp + ' °F');
-      const day3Temp = $('<p>').text('Temp: ' + response.list[16].main.temp + ' °F');
-      const day4Temp = $('<p>').text('Temp: ' + response.list[24].main.temp + ' °F');
-      const day5Temp = $('<p>').text('Temp: ' + response.list[32].main.temp + ' °F');
+      const day1Temp = $('<p>').text('Temp: ' + response.list[0].main.temp + '°F');
+      const day2Temp = $('<p>').text('Temp: ' + response.list[8].main.temp + '°F');
+      const day3Temp = $('<p>').text('Temp: ' + response.list[16].main.temp + '°F');
+      const day4Temp = $('<p>').text('Temp: ' + response.list[24].main.temp + '°F');
+      const day5Temp = $('<p>').text('Temp: ' + response.list[32].main.temp + '°F');
       const day1Humid = $('<p>').text('Humidity: ' + response.list[0].main.humidity + '%');
       const day2Humid = $('<p>').text('Humidity: ' + response.list[8].main.humidity + '%');
       const day3Humid = $('<p>').text('Humidity: ' + response.list[16].main.humidity + '%');
@@ -60,7 +59,6 @@ $( document ).ready(function() {
       // const
       console.log(response);
     });
-
   } 
 
   // Search Box sets city
@@ -69,7 +67,6 @@ $( document ).ready(function() {
     let cityName = $('#search-box').val().trim();
     const cityURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + APIKey + '&units=imperial';
     const fiveDayURL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=' + APIKey + '&units=imperial';
-    console.log(cityName);
 
     // City name call
     $.ajax({
@@ -96,11 +93,11 @@ $( document ).ready(function() {
       const day3Date = $('<h5>').text(response.list[16].dt_txt.slice(5, 10));
       const day4Date = $('<h5>').text(response.list[24].dt_txt.slice(5, 10));
       const day5Date = $('<h5>').text(response.list[32].dt_txt.slice(5, 10));
-      const day1Temp = $('<p>').text('Temp: ' + response.list[0].main.temp);
-      const day2Temp = $('<p>').text('Temp: ' + response.list[8].main.temp);
-      const day3Temp = $('<p>').text('Temp: ' + response.list[16].main.temp);
-      const day4Temp = $('<p>').text('Temp: ' + response.list[24].main.temp);
-      const day5Temp = $('<p>').text('Temp: ' + response.list[32].main.temp);
+      const day1Temp = $('<p>').text('Temp: ' + response.list[0].main.temp + '°F');
+      const day2Temp = $('<p>').text('Temp: ' + response.list[8].main.temp + '°F');
+      const day3Temp = $('<p>').text('Temp: ' + response.list[16].main.temp + '°F');
+      const day4Temp = $('<p>').text('Temp: ' + response.list[24].main.temp + '°F');
+      const day5Temp = $('<p>').text('Temp: ' + response.list[32].main.temp + '°F');
       const day1Humid = $('<p>').text('Humidity: ' + response.list[0].main.humidity + '%');
       const day2Humid = $('<p>').text('Humidity: ' + response.list[8].main.humidity + '%');
       const day3Humid = $('<p>').text('Humidity: ' + response.list[16].main.humidity + '%');

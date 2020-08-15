@@ -24,5 +24,5 @@ h3 {
 .weather-card {
     color: #f8f9fa;
     margin: 1rem;
-    display:inline-block;
+    /* display:inline-block; */
 }
