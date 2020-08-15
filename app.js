@@ -16,9 +16,16 @@ $( document ).ready(function() {
       url: queryURL,
       method: 'GET',
     }).then(function(response) {
-    console.log(response);
+      console.log(response);
+      $('.city-card').empty();
+      const $cityName = $('<h3>').text(response.name);
+      const $temp = $('<p>').text(response.main.temp);
+      const $humidity = $('<p>').text(response.main.humidity);
+      const $speed = $('<p>').text(response.wind.speed);
+      $('.city-card').append($cityName, $temp, $humidity, $speed);
     });
   });
 
   });
 
+ 
