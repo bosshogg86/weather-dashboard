@@ -1,7 +1,7 @@
 $( document ).ready(function() {
   
   // let cityName = '';
-  
+  let userSearch = [];
   const APIKey = 'c82e07f31254ca48265cc271c0642dc7'
   // const cityURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + APIKey + '&units=imperial';
 
@@ -67,6 +67,9 @@ $( document ).ready(function() {
     let cityName = $('#search-box').val().trim();
     const cityURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + APIKey + '&units=imperial';
     const fiveDayURL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=' + APIKey + '&units=imperial';
+    userSearch.push(cityName);
+    localStorage.setItem('input', userSearch);
+
 
     // City name call
     $.ajax({
