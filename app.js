@@ -11,6 +11,7 @@ $( document ).ready(function() {
   function init() {
     let cityName = 'San Francisco';
     const cityURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + APIKey + '&units=imperial';
+    const fiveDayURL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=' + APIKey + '&units=imperial';
     $.ajax({
       url: cityURL,
       method: 'GET',
@@ -23,6 +24,22 @@ $( document ).ready(function() {
       const $speed = $('<p>').text('Wind Speed: ' + response.wind.speed + 'MPH');
       $('.city-card').append($cityName, $temp, $humidity, $speed);
     });
+
+    $.ajax({
+      url: fiveDayURL,
+      method: 'GET',
+    }).then(function(response) {
+      $('.weather-card').empty();
+      $('#day1').text(response.list[0].dt_txt.slice(5, 10));
+      $('#day2').text(response.list[8].dt_txt.slice(5, 10));
+      $('#day3').text(response.list[16].dt_txt.slice(5, 10));
+      $('#day4').text(response.list[24].dt_txt.slice(5, 10));
+      $('#day5').text(response.list[32].dt_txt.slice(5, 10));
+      // const
+      // const
+      console.log(response.list[0].dt_txt);
+    });
+
   } 
 
   
