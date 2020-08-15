@@ -7,6 +7,18 @@ h1 {
 
 .search {
     background-color: #f8f9fa;
+    padding: 1rem;
     padding-bottom: 10rem;
-    /* width: 10rem; */
+    /* width: 12rem; */
+}
+
+.city-card {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.weather-card {
+    color: #f8f9fa;
+    margin: 1rem;
+    display:inline-block;
 }
