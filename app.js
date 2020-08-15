@@ -10,7 +10,7 @@ $( document ).ready(function() {
   $('#search-button').click(function(){
     event.preventDefault();
     let cityName = $('#search-box').val().trim();
-    let queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + APIKey + '&units=imperial';
+    const queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + APIKey + '&units=imperial';
     console.log(cityName);
     $.ajax({
       url: queryURL,
@@ -19,9 +19,9 @@ $( document ).ready(function() {
       console.log(response);
       $('.city-card').empty();
       const $cityName = $('<h3>').text(response.name);
-      const $temp = $('<p>').text(response.main.temp);
-      const $humidity = $('<p>').text(response.main.humidity);
-      const $speed = $('<p>').text(response.wind.speed);
+      const $temp = $('<p>').text('Temp: ' + response.main.temp + '°F');
+      const $humidity = $('<p>').text('Humidity: ' + response.main.humidity + '%');
+      const $speed = $('<p>').text('Wind Speed: ' + response.wind.speed + 'MPH');
       $('.city-card').append($cityName, $temp, $humidity, $speed);
     });
   });
