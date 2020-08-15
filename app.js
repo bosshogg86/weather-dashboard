@@ -6,6 +6,25 @@ $( document ).ready(function() {
   // const cityURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + APIKey + '&units=imperial';
 
   
+  init();
+
+  function init() {
+    let cityName = 'San Francisco';
+    const cityURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + APIKey + '&units=imperial';
+    $.ajax({
+      url: cityURL,
+      method: 'GET',
+    }).then(function(response) {
+      console.log(response);
+      $('.city-card').empty();
+      const $cityName = $('<h3>').text(response.name);
+      const $temp = $('<p>').text('Temp: ' + response.main.temp + '°F');
+      const $humidity = $('<p>').text('Humidity: ' + response.main.humidity + '%');
+      const $speed = $('<p>').text('Wind Speed: ' + response.wind.speed + 'MPH');
+      $('.city-card').append($cityName, $temp, $humidity, $speed);
+    });
+  } 
+
   
   $('#search-button').click(function(){
     event.preventDefault();
@@ -29,7 +48,9 @@ $( document ).ready(function() {
       url: fiveDayURL,
       method: 'GET',
     }).then(function(response) {
+      $('#five-day-cards').empty();
       console.log(response);
+      console.log(response.list[8].main.temp);
     });
 
 
