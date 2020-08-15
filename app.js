@@ -30,14 +30,19 @@ $( document ).ready(function() {
       method: 'GET',
     }).then(function(response) {
       $('.weather-card').empty();
-      $('#day1').text(response.list[0].dt_txt.slice(5, 10));
-      $('#day2').text(response.list[8].dt_txt.slice(5, 10));
-      $('#day3').text(response.list[16].dt_txt.slice(5, 10));
-      $('#day4').text(response.list[24].dt_txt.slice(5, 10));
-      $('#day5').text(response.list[32].dt_txt.slice(5, 10));
+      const day1Date = $('<h5>').text(response.list[0].dt_txt.slice(5, 10));
+      const day2Date = $('<h5>').text(response.list[8].dt_txt.slice(5, 10));
+      const day3Date = $('<h5>').text(response.list[16].dt_txt.slice(5, 10));
+      const day4Date = $('<h5>').text(response.list[24].dt_txt.slice(5, 10));
+      const day5Date = $('<h5>').text(response.list[32].dt_txt.slice(5, 10));
+      $('#day1').append(day1Date);
+      $('#day2').append(day2Date);
+      $('#day3').append(day3Date);
+      $('#day4').append(day4Date);
+      $('#day5').append(day5Date);
       // const
       // const
-      console.log(response.list[0].dt_txt);
+      console.log(response);
     });
 
   } 
@@ -65,9 +70,14 @@ $( document ).ready(function() {
       url: fiveDayURL,
       method: 'GET',
     }).then(function(response) {
-      $('#five-day-cards').empty();
+      $('.weather-card').empty();
+      $('#day1').text(response.list[0].dt_txt.slice(5, 10));
+      $('#day2').text(response.list[8].dt_txt.slice(5, 10));
+      $('#day3').text(response.list[16].dt_txt.slice(5, 10));
+      $('#day4').text(response.list[24].dt_txt.slice(5, 10));
+      $('#day5').text(response.list[32].dt_txt.slice(5, 10));
+
       console.log(response);
-      console.log(response.list[8].main.temp);
     });
 
 
