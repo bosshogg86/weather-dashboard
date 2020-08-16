@@ -27,7 +27,7 @@ $(document).ready(function () {
     }).then(function (cityData) {
       console.log(cityData);
       const iconCode = cityData.weather[0].icon;
-      let iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
+      const iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
       console.log(iconURL); 
       const lat = cityData.coord.lat;
       const lon = cityData.coord.lon;
@@ -41,8 +41,8 @@ $(document).ready(function () {
         console.log(uvData);
         $(".city-card").empty();
         const $cityName = $("<h3>").text(cityData.name);
-        const $iconImg = $('<img>').attr('src', iconURL);
-        $iconImg.addClass('city-icon');
+        const $cityImg = $('<img>').attr('src', iconURL);
+        $cityImg.addClass('city-icon');
         const $temp = $("<p>").text("Temp: " + cityData.main.temp + "°F");
         const $humidity = $("<p>").text(
           "Humidity: " + cityData.main.humidity + "%"
@@ -51,7 +51,7 @@ $(document).ready(function () {
           "Wind Speed: " + cityData.wind.speed + " MPH"
         );
         const $uv = $("<p>").text("UV Index: " + uvData.value);
-        $(".city-card").append($cityName, $iconImg, $temp, $humidity, $speed, $uv);
+        $(".city-card").append($cityName, $cityImg, $temp, $humidity, $speed, $uv);
       });
     });
 
@@ -66,6 +66,21 @@ $(document).ready(function () {
       const day3Date = $("<h5>").text(fiveDayData.list[20].dt_txt.slice(5, 10));
       const day4Date = $("<h5>").text(fiveDayData.list[28].dt_txt.slice(5, 10));
       const day5Date = $("<h5>").text(fiveDayData.list[36].dt_txt.slice(5, 10));
+      const day1IconCode = fiveDayData.list[4].weather[0].icon;
+      const day2IconCode = fiveDayData.list[12].weather[0].icon;
+      const day3IconCode = fiveDayData.list[20].weather[0].icon;
+      const day4IconCode = fiveDayData.list[28].weather[0].icon;
+      const day5IconCode = fiveDayData.list[36].weather[0].icon;
+      const day1IconURL = `http://openweathermap.org/img/w/${day1IconCode}.png`;
+      const day2IconURL = `http://openweathermap.org/img/w/${day2IconCode}.png`;
+      const day3IconURL = `http://openweathermap.org/img/w/${day3IconCode}.png`;
+      const day4IconURL = `http://openweathermap.org/img/w/${day4IconCode}.png`;
+      const day5IconURL = `http://openweathermap.org/img/w/${day5IconCode}.png`;
+      const day1Img = $('<img>').attr('src', day1IconURL);
+      const day2Img = $('<img>').attr('src', day2IconURL);
+      const day3Img = $('<img>').attr('src', day3IconURL);
+      const day4Img = $('<img>').attr('src', day4IconURL);
+      const day5Img = $('<img>').attr('src', day5IconURL);
       const day1Temp = $("<p>").text(
         "Temp: " + fiveDayData.list[4].main.temp_max + "°F"
       );
@@ -96,12 +111,12 @@ $(document).ready(function () {
       const day5Humid = $("<p>").text(
         "Humidity: " + fiveDayData.list[36].main.humidity + "%"
       );
-      $("#day1").append(day1Date, day1Temp, day1Humid);
-      $("#day2").append(day2Date, day2Temp, day2Humid);
-      $("#day3").append(day3Date, day3Temp, day3Humid);
-      $("#day4").append(day4Date, day4Temp, day4Humid);
-      $("#day5").append(day5Date, day5Temp, day5Humid);
-      // console.log(fiveDayData);
+      $("#day1").append(day1Date, day1Img, day1Temp, day1Humid);
+      $("#day2").append(day2Date, day2Img, day2Temp, day2Humid);
+      $("#day3").append(day3Date, day3Img, day3Temp, day3Humid);
+      $("#day4").append(day4Date, day4Img, day4Temp, day4Humid);
+      $("#day5").append(day5Date, day5Img, day5Temp, day5Humid);
+      console.log(fiveDayData);
       storeInput();
       renderInputs();
       $cityName.val("");
@@ -175,6 +190,21 @@ $(document).ready(function () {
       const day3Date = $("<h5>").text(fiveDayData.list[20].dt_txt.slice(5, 10));
       const day4Date = $("<h5>").text(fiveDayData.list[28].dt_txt.slice(5, 10));
       const day5Date = $("<h5>").text(fiveDayData.list[36].dt_txt.slice(5, 10));
+      const day1IconCode = fiveDayData.list[4].weather[0].icon;
+      const day2IconCode = fiveDayData.list[12].weather[0].icon;
+      const day3IconCode = fiveDayData.list[20].weather[0].icon;
+      const day4IconCode = fiveDayData.list[28].weather[0].icon;
+      const day5IconCode = fiveDayData.list[36].weather[0].icon;
+      const day1IconURL = `http://openweathermap.org/img/w/${day1IconCode}.png`;
+      const day2IconURL = `http://openweathermap.org/img/w/${day2IconCode}.png`;
+      const day3IconURL = `http://openweathermap.org/img/w/${day3IconCode}.png`;
+      const day4IconURL = `http://openweathermap.org/img/w/${day4IconCode}.png`;
+      const day5IconURL = `http://openweathermap.org/img/w/${day5IconCode}.png`;
+      const day1Img = $('<img>').attr('src', day1IconURL);
+      const day2Img = $('<img>').attr('src', day2IconURL);
+      const day3Img = $('<img>').attr('src', day3IconURL);
+      const day4Img = $('<img>').attr('src', day4IconURL);
+      const day5Img = $('<img>').attr('src', day5IconURL);
       const day1Temp = $("<p>").text(
         "Temp: " + fiveDayData.list[4].main.temp_max + "°F"
       );
@@ -205,11 +235,11 @@ $(document).ready(function () {
       const day5Humid = $("<p>").text(
         "Humidity: " + fiveDayData.list[36].main.humidity + "%"
       );
-      $("#day1").append(day1Date, day1Temp, day1Humid);
-      $("#day2").append(day2Date, day2Temp, day2Humid);
-      $("#day3").append(day3Date, day3Temp, day3Humid);
-      $("#day4").append(day4Date, day4Temp, day4Humid);
-      $("#day5").append(day5Date, day5Temp, day5Humid);
+      $("#day1").append(day1Date, day1Img, day1Temp, day1Humid);
+      $("#day2").append(day2Date, day2Img, day2Temp, day2Humid);
+      $("#day3").append(day3Date, day3Img, day3Temp, day3Humid);
+      $("#day4").append(day4Date, day4Img, day4Temp, day4Humid);
+      $("#day5").append(day5Date, day5Img, day5Temp, day5Humid);
       console.log(fiveDayData);
       // renderInputs();
     });
