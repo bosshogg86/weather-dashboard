@@ -1,7 +1,7 @@
 $(document).ready(function () {
   let userInputs = [];
 
-  const $searchHistory = $(".list-group");
+  const $searchHistory = $(".list-group-item");
   const $cityName = $("#search-box");
   const APIKey = "c82e07f31254ca48265cc271c0642dc7";
 
@@ -9,8 +9,8 @@ $(document).ready(function () {
   init();
 
   // Search history click
-  $searchHistory.click(function () {
-    console.log("hi");
+  $(".list-group-item").click(function() {
+    console.log('hi');
   });
 
   // Search Box sets city
@@ -145,13 +145,21 @@ $(document).ready(function () {
       userInput.text(cityName);
       userInput.addClass("list-group-item");
       userInput.attr("href", "#search-button");
+      userInput.attr("value", cityName);
+      
       $(".list-group").append(userInput);
     });
   }
 
-  // Sets SF to default city
+  // Sets default city to stored search, if none SF default
   function init() {
-    cityName = "San Francisco";
+    if (localStorage.getItem("userInput")) {
+      console.log('userInput');
+      cityName = localStorage.getItem("userInput")
+    } else {
+      cityName = "San Francisco";
+    }
+    
     const cityURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}&units=imperial`;
     const fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${APIKey}&units=imperial`;
 
