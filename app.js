@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // let cityName = '';
   let userInputs = [];
-  let userInputIndex = 0;
+  const $searchHistory = $(".list-group");
   // let cityName = '';
   const $cityName = $("#search-box");
   const APIKey = "c82e07f31254ca48265cc271c0642dc7";
@@ -13,7 +13,7 @@ $(document).ready(function () {
   init();
 
   // Search history click
-  $(".list-group-item").click(function () {
+  $searchHistory.click(function() {
     console.log('hi');
   });
 
@@ -122,6 +122,7 @@ $(document).ready(function () {
       const userInput = $("<li>");
       userInput.text(cityName);
       userInput.addClass("list-group-item");
+      userInput.attr('href', '#search-button');
       $(".list-group").append(userInput);
     });
   }
