@@ -1,13 +1,10 @@
 $(document).ready(function () {
-  // let cityName = '';
+
   let userInputs = [];
+
   const $searchHistory = $(".list-group");
-  // let cityName = '';
   const $cityName = $("#search-box");
   const APIKey = "c82e07f31254ca48265cc271c0642dc7";
-  // const cityURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}&units=imperial`;
-  // const fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${APIKey}&units=imperial`;
-  // const uvURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${lon}`;
 
   // Set default city
   init();
@@ -18,18 +15,20 @@ $(document).ready(function () {
   });
 
   // Search Box sets city
-  $("#search-button").click(function () {
+  $("#search-button").click(function() {
     event.preventDefault();
     cityName = $cityName.val();
     const cityURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}&units=imperial`;
     const fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${APIKey}&units=imperial`;
-
     // City name call
     $.ajax({
       url: cityURL,
       method: "GET",
     }).then(function (cityData) {
       console.log(cityData);
+      const iconCode = cityData.weather[0].icon;
+      let iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
+      console.log(iconURL); 
       const lat = cityData.coord.lat;
       const lon = cityData.coord.lon;
       const uvURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${lon}`;
@@ -42,6 +41,7 @@ $(document).ready(function () {
         console.log(uvData);
         $(".city-card").empty();
         const $cityName = $("<h3>").text(cityData.name);
+        const $iconImg = $('<img>').attr('src', iconURL);
         const $temp = $("<p>").text("Temp: " + cityData.main.temp + "°F");
         const $humidity = $("<p>").text(
           "Humidity: " + cityData.main.humidity + "%"
