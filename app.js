@@ -2,6 +2,7 @@ $( document ).ready(function() {
   
   // let cityName = '';
   let userInputs = [];
+  let userInputIndex = 0;
   // let cityName = '';
   const $cityName = $('#search-box');
   const APIKey = 'c82e07f31254ca48265cc271c0642dc7';
@@ -75,33 +76,24 @@ $( document ).ready(function() {
       storeInput();
       renderInputs();
       $cityName.val('');
-      // console.log(userInputs);
-
-      // userInputs.forEach(function() {
-      //   const userInput = $('<li>');
-      //   userInput.text($(this).text());
-      //   userInput.addClass('list-group-item');
-      //   $('.list-group').append(userInput);
-      //   localStorage.setItem('index', userInputs);
-      //   renderInputs();
-      //   $cityName.val('');
-      // });
-      
+      // console.log(userInputs);      
     });
 
 
   });
 
   function storeInput() {
-    $cityName.attr('index', 0);
+    // $cityName.attr('index', 0);
     // $('<img>').attr('src', thumb_url);
     userInputs.push(cityName);
-    localStorage.setItem('inputArr', userInputs);
+    console.log(userInputs);
+    localStorage.setItem('userInputArr', userInputs);
   }
 
   function renderInputs() {
+    localStorage.getItem('userInputArr');
     for (let i = 0; i < userInputs.length; i++) {
-
+      
       const userInput = $('<li>');
       userInput.addClass('list-group-item');
       $('.list-group').append(userInput);
@@ -109,16 +101,6 @@ $( document ).ready(function() {
       console.log(cityName);
     }
   }
-  // function renderResults(data) {
-  //   // console.log(data);
-  //   // alert(data.status);
-  //   data.response.docs.forEach(function(element) {
-  //       const articleDiv = $('<div>');
-  //       articleDiv.text(element.abstract);
-  //       articleDiv.addClass('search-item-div');
-  //       $('#search-results').append(articleDiv);
-  //   });
-// }
 
   // Sets SF to default city
   function init() {
@@ -179,7 +161,7 @@ $( document ).ready(function() {
       $('#day4').append(day4Date, day4Temp, day4Humid);
       $('#day5').append(day5Date, day5Temp, day5Humid);
       console.log(fiveDayData);
-      $cityName.val('');
+      // renderInputs();
     });
   }
 
