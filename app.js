@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
   let userInputs = [];
 
   const $searchHistory = $(".list-group");
@@ -10,12 +9,12 @@ $(document).ready(function () {
   init();
 
   // Search history click
-  $searchHistory.click(function() {
-    console.log('hi');
+  $searchHistory.click(function () {
+    console.log("hi");
   });
 
   // Search Box sets city
-  $("#search-button").click(function() {
+  $("#search-button").click(function () {
     event.preventDefault();
     cityName = $cityName.val();
     const cityURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}&units=imperial`;
@@ -28,7 +27,7 @@ $(document).ready(function () {
       console.log(cityData);
       const iconCode = cityData.weather[0].icon;
       const iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
-      console.log(iconURL); 
+      console.log(iconURL);
       const lat = cityData.coord.lat;
       const lon = cityData.coord.lon;
       const uvURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${lon}`;
@@ -41,8 +40,8 @@ $(document).ready(function () {
         console.log(uvData);
         $(".city-card").empty();
         const $cityName = $("<h3>").text(cityData.name);
-        const $cityImg = $('<img>').attr('src', iconURL);
-        $cityImg.addClass('city-icon');
+        const $cityImg = $("<img>").attr("src", iconURL);
+        $cityImg.addClass("city-icon");
         const $temp = $("<p>").text("Temp: " + cityData.main.temp + "°F");
         const $humidity = $("<p>").text(
           "Humidity: " + cityData.main.humidity + "%"
@@ -51,7 +50,14 @@ $(document).ready(function () {
           "Wind Speed: " + cityData.wind.speed + " MPH"
         );
         const $uv = $("<p>").text("UV Index: " + uvData.value);
-        $(".city-card").append($cityName, $cityImg, $temp, $humidity, $speed, $uv);
+        $(".city-card").append(
+          $cityName,
+          $cityImg,
+          $temp,
+          $humidity,
+          $speed,
+          $uv
+        );
       });
     });
 
@@ -76,11 +82,11 @@ $(document).ready(function () {
       const day3IconURL = `http://openweathermap.org/img/w/${day3IconCode}.png`;
       const day4IconURL = `http://openweathermap.org/img/w/${day4IconCode}.png`;
       const day5IconURL = `http://openweathermap.org/img/w/${day5IconCode}.png`;
-      const day1Img = $('<img>').attr('src', day1IconURL);
-      const day2Img = $('<img>').attr('src', day2IconURL);
-      const day3Img = $('<img>').attr('src', day3IconURL);
-      const day4Img = $('<img>').attr('src', day4IconURL);
-      const day5Img = $('<img>').attr('src', day5IconURL);
+      const day1Img = $("<img>").attr("src", day1IconURL);
+      const day2Img = $("<img>").attr("src", day2IconURL);
+      const day3Img = $("<img>").attr("src", day3IconURL);
+      const day4Img = $("<img>").attr("src", day4IconURL);
+      const day5Img = $("<img>").attr("src", day5IconURL);
       const day1Temp = $("<p>").text(
         "Temp: " + fiveDayData.list[4].main.temp_max + "°F"
       );
@@ -116,7 +122,7 @@ $(document).ready(function () {
       $("#day3").append(day3Date, day3Img, day3Temp, day3Humid);
       $("#day4").append(day4Date, day4Img, day4Temp, day4Humid);
       $("#day5").append(day5Date, day5Img, day5Temp, day5Humid);
-      console.log(fiveDayData);
+      // console.log(fiveDayData);
       storeInput();
       renderInputs();
       $cityName.val("");
@@ -138,7 +144,7 @@ $(document).ready(function () {
       const userInput = $("<li>");
       userInput.text(cityName);
       userInput.addClass("list-group-item");
-      userInput.attr('href', '#search-button');
+      userInput.attr("href", "#search-button");
       $(".list-group").append(userInput);
     });
   }
@@ -155,6 +161,9 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (cityData) {
       console.log(cityData);
+      const iconCode = cityData.weather[0].icon;
+      const iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
+      console.log(iconURL);
       const lat = cityData.coord.lat;
       const lon = cityData.coord.lon;
       const uvURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${lon}`;
@@ -167,6 +176,8 @@ $(document).ready(function () {
         console.log(uvData);
         $(".city-card").empty();
         const $cityName = $("<h3>").text(cityData.name);
+        const $cityImg = $("<img>").attr("src", iconURL);
+        $cityImg.addClass("city-icon");
         const $temp = $("<p>").text("Temp: " + cityData.main.temp + "°F");
         const $humidity = $("<p>").text(
           "Humidity: " + cityData.main.humidity + "%"
@@ -175,7 +186,14 @@ $(document).ready(function () {
           "Wind Speed: " + cityData.wind.speed + " MPH"
         );
         const $uv = $("<p>").text("UV Index: " + uvData.value);
-        $(".city-card").append($cityName, $temp, $humidity, $speed, $uv);
+        $(".city-card").append(
+          $cityName,
+          $cityImg,
+          $temp,
+          $humidity,
+          $speed,
+          $uv
+        );
       });
     });
 
@@ -200,11 +218,11 @@ $(document).ready(function () {
       const day3IconURL = `http://openweathermap.org/img/w/${day3IconCode}.png`;
       const day4IconURL = `http://openweathermap.org/img/w/${day4IconCode}.png`;
       const day5IconURL = `http://openweathermap.org/img/w/${day5IconCode}.png`;
-      const day1Img = $('<img>').attr('src', day1IconURL);
-      const day2Img = $('<img>').attr('src', day2IconURL);
-      const day3Img = $('<img>').attr('src', day3IconURL);
-      const day4Img = $('<img>').attr('src', day4IconURL);
-      const day5Img = $('<img>').attr('src', day5IconURL);
+      const day1Img = $("<img>").attr("src", day1IconURL);
+      const day2Img = $("<img>").attr("src", day2IconURL);
+      const day3Img = $("<img>").attr("src", day3IconURL);
+      const day4Img = $("<img>").attr("src", day4IconURL);
+      const day5Img = $("<img>").attr("src", day5IconURL);
       const day1Temp = $("<p>").text(
         "Temp: " + fiveDayData.list[4].main.temp_max + "°F"
       );
