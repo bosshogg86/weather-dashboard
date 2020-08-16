@@ -9,8 +9,8 @@ $(document).ready(function () {
   init();
 
   // Search history click
-  $(".list-group-item").click(function() {
-    console.log('hi');
+  $(".list-group").click(function(event) {
+    console.log(event.target.getAttribute('value'));
   });
 
   // Search Box sets city
@@ -24,10 +24,8 @@ $(document).ready(function () {
       url: cityURL,
       method: "GET",
     }).then(function (cityData) {
-      console.log(cityData);
       const iconCode = cityData.weather[0].icon;
       const iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
-      console.log(iconURL);
       const lat = cityData.coord.lat;
       const lon = cityData.coord.lon;
       const uvURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${lon}`;
@@ -122,17 +120,13 @@ $(document).ready(function () {
       $("#day3").append(day3Date, day3Img, day3Temp, day3Humid);
       $("#day4").append(day4Date, day4Img, day4Temp, day4Humid);
       $("#day5").append(day5Date, day5Img, day5Temp, day5Humid);
-      // console.log(fiveDayData);
       storeInput();
       renderInputs();
       $cityName.val("");
-      // console.log(userInputs);
     });
   });
 
   function storeInput() {
-    // $cityName.attr('index', 0);
-    // $('<img>').attr('src', thumb_url);
     userInputs.push(cityName);
     console.log(userInputs);
     localStorage.setItem("userInput", userInputs);
@@ -144,9 +138,8 @@ $(document).ready(function () {
       const userInput = $("<li>");
       userInput.text(cityName);
       userInput.addClass("list-group-item");
-      userInput.attr("href", "#search-button");
+      // userInput.attr("href", "#search-button");
       userInput.attr("value", cityName);
-      
       $(".list-group").append(userInput);
     });
   }
@@ -154,7 +147,6 @@ $(document).ready(function () {
   // Sets default city to stored search, if none SF default
   function init() {
     if (localStorage.getItem("userInput")) {
-      console.log('userInput');
       cityName = localStorage.getItem("userInput")
     } else {
       cityName = "San Francisco";
@@ -168,10 +160,8 @@ $(document).ready(function () {
       url: cityURL,
       method: "GET",
     }).then(function (cityData) {
-      console.log(cityData);
       const iconCode = cityData.weather[0].icon;
       const iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
-      console.log(iconURL);
       const lat = cityData.coord.lat;
       const lon = cityData.coord.lon;
       const uvURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${lon}`;
@@ -266,8 +256,7 @@ $(document).ready(function () {
       $("#day3").append(day3Date, day3Img, day3Temp, day3Humid);
       $("#day4").append(day4Date, day4Img, day4Temp, day4Humid);
       $("#day5").append(day5Date, day5Img, day5Temp, day5Humid);
-      console.log(fiveDayData);
-      // renderInputs();
+      renderInputs()
     });
   }
 });
