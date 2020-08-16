@@ -12,6 +12,11 @@ $(document).ready(function () {
   // Set default city
   init();
 
+  // Search history click
+  $(".list-group-item").click(function () {
+    console.log('hi');
+  });
+
   // Search Box sets city
   $("#search-button").click(function () {
     event.preventDefault();
