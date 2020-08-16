@@ -42,6 +42,7 @@ $(document).ready(function () {
         $(".city-card").empty();
         const $cityName = $("<h3>").text(cityData.name);
         const $iconImg = $('<img>').attr('src', iconURL);
+        $iconImg.addClass('city-icon');
         const $temp = $("<p>").text("Temp: " + cityData.main.temp + "°F");
         const $humidity = $("<p>").text(
           "Humidity: " + cityData.main.humidity + "%"
@@ -50,7 +51,7 @@ $(document).ready(function () {
           "Wind Speed: " + cityData.wind.speed + " MPH"
         );
         const $uv = $("<p>").text("UV Index: " + uvData.value);
-        $(".city-card").append($cityName, $temp, $humidity, $speed, $uv);
+        $(".city-card").append($cityName, $iconImg, $temp, $humidity, $speed, $uv);
       });
     });
 
