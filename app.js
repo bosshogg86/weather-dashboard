@@ -71,6 +71,7 @@ $( document ).ready(function() {
       $('#day4').append(day4Date, day4Temp, day4Humid);
       $('#day5').append(day5Date, day5Temp, day5Humid);
       console.log(fiveDayData);
+      $cityName.val('');
     });
 
 
