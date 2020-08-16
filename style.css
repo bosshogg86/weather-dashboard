@@ -37,12 +37,13 @@ h3 {
 }
 
 img {
-    width: 75px;
+    width: 60px;
     margin: auto;
 }
 .city-icon {
-    width: 75px;
+    width: 125px;
     margin: 1rem;
+    margin-left: -1rem;
 }
 
 
