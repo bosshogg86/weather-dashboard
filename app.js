@@ -1,5 +1,6 @@
 $(document).ready(function () {
   let userInputs = [];
+
   const $cityName = $("#search-box");
   const APIKey = "c82e07f31254ca48265cc271c0642dc7";
 
@@ -9,7 +10,7 @@ $(document).ready(function () {
   function storeInput() {
     userInputs.push(cityName);
     console.log(userInputs);
-    localStorage.setItem("userInput", userInputs);
+    localStorage.setItem("userInput", JSON.stringify(userInputs));
   }
 
   function renderInputs() {
@@ -27,7 +28,10 @@ $(document).ready(function () {
   // Sets default city to stored search, if none SF default
   function init() {
     if (localStorage.getItem("userInput")) {
-      cityName = localStorage.getItem("userInput")
+      const savedInputs = JSON.parse(localStorage.getItem("userInput"));
+      userInputs.push(...savedInputs);
+      console.log(userInputs);
+      cityName = userInputs[userInputs.length - 1];
     } else {
       cityName = "San Francisco";
     }
