@@ -114,16 +114,16 @@ $(document).ready(function () {
     }).then(function (fiveDayData) {
       console.log(fiveDayData);
       $(".weather-card").empty();
-      const day1Date = $("<h5>").text(fiveDayData.list[4].dt_txt.slice(5, 10));
-      const day2Date = $("<h5>").text(fiveDayData.list[12].dt_txt.slice(5, 10));
-      const day3Date = $("<h5>").text(fiveDayData.list[20].dt_txt.slice(5, 10));
-      const day4Date = $("<h5>").text(fiveDayData.list[28].dt_txt.slice(5, 10));
-      const day5Date = $("<h5>").text(fiveDayData.list[36].dt_txt.slice(5, 10));
-      const day1IconCode = fiveDayData.list[4].weather[0].icon;
-      const day2IconCode = fiveDayData.list[12].weather[0].icon;
-      const day3IconCode = fiveDayData.list[20].weather[0].icon;
-      const day4IconCode = fiveDayData.list[28].weather[0].icon;
-      const day5IconCode = fiveDayData.list[36].weather[0].icon;
+      const day1Date = $("<h5>").text(fiveDayData.list[0].dt_txt.slice(5, 10));
+      const day2Date = $("<h5>").text(fiveDayData.list[8].dt_txt.slice(5, 10));
+      const day3Date = $("<h5>").text(fiveDayData.list[16].dt_txt.slice(5, 10));
+      const day4Date = $("<h5>").text(fiveDayData.list[24].dt_txt.slice(5, 10));
+      const day5Date = $("<h5>").text(fiveDayData.list[32].dt_txt.slice(5, 10));
+      const day1IconCode = fiveDayData.list[0].weather[0].icon;
+      const day2IconCode = fiveDayData.list[8].weather[0].icon;
+      const day3IconCode = fiveDayData.list[16].weather[0].icon;
+      const day4IconCode = fiveDayData.list[24].weather[0].icon;
+      const day5IconCode = fiveDayData.list[32].weather[0].icon;
       const day1IconURL = `http://openweathermap.org/img/w/${day1IconCode}.png`;
       const day2IconURL = `http://openweathermap.org/img/w/${day2IconCode}.png`;
       const day3IconURL = `http://openweathermap.org/img/w/${day3IconCode}.png`;
@@ -135,34 +135,34 @@ $(document).ready(function () {
       const day4Img = $("<img>").attr("src", day4IconURL);
       const day5Img = $("<img>").attr("src", day5IconURL);
       const day1Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[4].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[0].main.temp_max + "°F"
       );
       const day2Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[12].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[8].main.temp_max + "°F"
       );
       const day3Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[20].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[16].main.temp_max + "°F"
       );
       const day4Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[28].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[24].main.temp_max + "°F"
       );
       const day5Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[36].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[32].main.temp_max + "°F"
       );
       const day1Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[4].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[0].main.humidity + "%"
       );
       const day2Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[12].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[8].main.humidity + "%"
       );
       const day3Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[20].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[16].main.humidity + "%"
       );
       const day4Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[28].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[24].main.humidity + "%"
       );
       const day5Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[36].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[32].main.humidity + "%"
       );
       $("#day1").append(day1Date, day1Img, day1Temp, day1Humid);
       $("#day2").append(day2Date, day2Img, day2Temp, day2Humid);
@@ -241,16 +241,16 @@ $(document).ready(function () {
     }).then(function (fiveDayData) {
       console.log(fiveDayData);
       $(".weather-card").empty();
-      const day1Date = $("<h5>").text(fiveDayData.list[4].dt_txt.slice(5, 10));
-      const day2Date = $("<h5>").text(fiveDayData.list[12].dt_txt.slice(5, 10));
-      const day3Date = $("<h5>").text(fiveDayData.list[20].dt_txt.slice(5, 10));
-      const day4Date = $("<h5>").text(fiveDayData.list[28].dt_txt.slice(5, 10));
-      const day5Date = $("<h5>").text(fiveDayData.list[36].dt_txt.slice(5, 10));
-      const day1IconCode = fiveDayData.list[4].weather[0].icon;
-      const day2IconCode = fiveDayData.list[12].weather[0].icon;
-      const day3IconCode = fiveDayData.list[20].weather[0].icon;
-      const day4IconCode = fiveDayData.list[28].weather[0].icon;
-      const day5IconCode = fiveDayData.list[36].weather[0].icon;
+      const day1Date = $("<h5>").text(fiveDayData.list[0].dt_txt.slice(5, 10));
+      const day2Date = $("<h5>").text(fiveDayData.list[8].dt_txt.slice(5, 10));
+      const day3Date = $("<h5>").text(fiveDayData.list[16].dt_txt.slice(5, 10));
+      const day4Date = $("<h5>").text(fiveDayData.list[24].dt_txt.slice(5, 10));
+      const day5Date = $("<h5>").text(fiveDayData.list[32].dt_txt.slice(5, 10));
+      const day1IconCode = fiveDayData.list[0].weather[0].icon;
+      const day2IconCode = fiveDayData.list[8].weather[0].icon;
+      const day3IconCode = fiveDayData.list[16].weather[0].icon;
+      const day4IconCode = fiveDayData.list[24].weather[0].icon;
+      const day5IconCode = fiveDayData.list[32].weather[0].icon;
       const day1IconURL = `http://openweathermap.org/img/w/${day1IconCode}.png`;
       const day2IconURL = `http://openweathermap.org/img/w/${day2IconCode}.png`;
       const day3IconURL = `http://openweathermap.org/img/w/${day3IconCode}.png`;
@@ -262,34 +262,34 @@ $(document).ready(function () {
       const day4Img = $("<img>").attr("src", day4IconURL);
       const day5Img = $("<img>").attr("src", day5IconURL);
       const day1Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[4].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[0].main.temp_max + "°F"
       );
       const day2Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[12].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[8].main.temp_max + "°F"
       );
       const day3Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[20].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[16].main.temp_max + "°F"
       );
       const day4Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[28].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[24].main.temp_max + "°F"
       );
       const day5Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[36].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[32].main.temp_max + "°F"
       );
       const day1Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[4].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[0].main.humidity + "%"
       );
       const day2Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[12].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[8].main.humidity + "%"
       );
       const day3Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[20].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[16].main.humidity + "%"
       );
       const day4Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[28].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[24].main.humidity + "%"
       );
       const day5Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[36].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[32].main.humidity + "%"
       );
       $("#day1").append(day1Date, day1Img, day1Temp, day1Humid);
       $("#day2").append(day2Date, day2Img, day2Temp, day2Humid);
@@ -368,16 +368,16 @@ $(document).ready(function () {
     }).then(function (fiveDayData) {
       console.log(fiveDayData);
       $(".weather-card").empty();
-      const day1Date = $("<h5>").text(fiveDayData.list[4].dt_txt.slice(5, 10));
-      const day2Date = $("<h5>").text(fiveDayData.list[12].dt_txt.slice(5, 10));
-      const day3Date = $("<h5>").text(fiveDayData.list[20].dt_txt.slice(5, 10));
-      const day4Date = $("<h5>").text(fiveDayData.list[28].dt_txt.slice(5, 10));
-      const day5Date = $("<h5>").text(fiveDayData.list[36].dt_txt.slice(5, 10));
-      const day1IconCode = fiveDayData.list[4].weather[0].icon;
-      const day2IconCode = fiveDayData.list[12].weather[0].icon;
-      const day3IconCode = fiveDayData.list[20].weather[0].icon;
-      const day4IconCode = fiveDayData.list[28].weather[0].icon;
-      const day5IconCode = fiveDayData.list[36].weather[0].icon;
+      const day1Date = $("<h5>").text(fiveDayData.list[0].dt_txt.slice(5, 10));
+      const day2Date = $("<h5>").text(fiveDayData.list[8].dt_txt.slice(5, 10));
+      const day3Date = $("<h5>").text(fiveDayData.list[16].dt_txt.slice(5, 10));
+      const day4Date = $("<h5>").text(fiveDayData.list[24].dt_txt.slice(5, 10));
+      const day5Date = $("<h5>").text(fiveDayData.list[32].dt_txt.slice(5, 10));
+      const day1IconCode = fiveDayData.list[0].weather[0].icon;
+      const day2IconCode = fiveDayData.list[8].weather[0].icon;
+      const day3IconCode = fiveDayData.list[16].weather[0].icon;
+      const day4IconCode = fiveDayData.list[24].weather[0].icon;
+      const day5IconCode = fiveDayData.list[32].weather[0].icon;
       const day1IconURL = `http://openweathermap.org/img/w/${day1IconCode}.png`;
       const day2IconURL = `http://openweathermap.org/img/w/${day2IconCode}.png`;
       const day3IconURL = `http://openweathermap.org/img/w/${day3IconCode}.png`;
@@ -389,34 +389,34 @@ $(document).ready(function () {
       const day4Img = $("<img>").attr("src", day4IconURL);
       const day5Img = $("<img>").attr("src", day5IconURL);
       const day1Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[4].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[0].main.temp_max + "°F"
       );
       const day2Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[12].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[8].main.temp_max + "°F"
       );
       const day3Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[20].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[16].main.temp_max + "°F"
       );
       const day4Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[28].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[24].main.temp_max + "°F"
       );
       const day5Temp = $("<p>").text(
-        "Temp: " + fiveDayData.list[36].main.temp_max + "°F"
+        "Temp: " + fiveDayData.list[32].main.temp_max + "°F"
       );
       const day1Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[4].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[0].main.humidity + "%"
       );
       const day2Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[12].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[8].main.humidity + "%"
       );
       const day3Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[20].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[16].main.humidity + "%"
       );
       const day4Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[28].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[24].main.humidity + "%"
       );
       const day5Humid = $("<p>").text(
-        "Humidity: " + fiveDayData.list[36].main.humidity + "%"
+        "Humidity: " + fiveDayData.list[32].main.humidity + "%"
       );
       $("#day1").append(day1Date, day1Img, day1Temp, day1Humid);
       $("#day2").append(day2Date, day2Img, day2Temp, day2Humid);
