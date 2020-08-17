@@ -13,10 +13,10 @@ $(document).ready(function () {
   // Save search term
   function storeInput() {    
     userInputs = JSON.parse(localStorage.getItem("userInput")) || [];
-    let set =new Set(userInputs)
-    set.add(cityName)
-    const toArr=Array.from(set)
-    localStorage.setItem("userInput",JSON.stringify(toArr))
+    let set =new Set(userInputs);
+    set.add(cityName);
+    const toArr=Array.from(set);
+    localStorage.setItem("userInput",JSON.stringify(toArr));
   }
 
   // Render saved search terms
@@ -34,7 +34,7 @@ $(document).ready(function () {
       $(".history").append(userInput);
     });
     } else {
-      console.log('No stored cities')
+      console.log('No stored cities');
     }
       
   }
