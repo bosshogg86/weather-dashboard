@@ -28,6 +28,7 @@ h3 {
 .city-card {
     margin-top: 1rem;
     margin-bottom: 3rem;
+    text-align: center;
 }
 
 .weather-card {
@@ -53,8 +54,8 @@ img {
 }
 .city-icon {
     width: 125px;
-    margin: 1rem;
-    margin-left: -1rem;
+    margin: auto;
+    /* margin-left: -1rem; */
 }
 
 

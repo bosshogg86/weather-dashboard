@@ -4,6 +4,9 @@ $(document).ready(function () {
   const $cityName = $("#search-box");
   const APIKey = "c82e07f31254ca48265cc271c0642dc7";
 
+  
+  moment();
+
   // Set stored or default city
   init();
 
@@ -14,9 +17,6 @@ $(document).ready(function () {
     set.add(cityName)
     const toArr=Array.from(set)
     localStorage.setItem("userInput",JSON.stringify(toArr))
-    // userInputs.push(cityName);
-    // console.log(userInputs);
-    // localStorage.setItem("userInput", JSON.stringify(userInputs));
   }
 
   // Render saved search terms
@@ -73,6 +73,7 @@ $(document).ready(function () {
         console.log(uvData);
         $(".city-card").empty();
         const $cityName = $("<h3>").text(cityData.name);
+        const $date = $('<h4>').text(moment().format("dddd, MMMM Do"));
         const $cityImg = $("<img>").attr("src", iconURL);
         $cityImg.addClass("city-icon");
         const $temp = $("<p>").text("Temp: " + cityData.main.temp + "°F");
@@ -85,6 +86,7 @@ $(document).ready(function () {
         const $uv = $("<p>").text("UV Index: " + uvData.value);
         $(".city-card").append(
           $cityName,
+          $date,
           $cityImg,
           $temp,
           $humidity,
@@ -187,6 +189,7 @@ $(document).ready(function () {
         console.log(uvData);
         $(".city-card").empty();
         const $cityName = $("<h3>").text(cityData.name);
+        const $date = $('<h4>').text(moment().format("dddd, MMMM Do"));
         const $cityImg = $("<img>").attr("src", iconURL);
         $cityImg.addClass("city-icon");
         const $temp = $("<p>").text("Temp: " + cityData.main.temp + "°F");
@@ -199,6 +202,7 @@ $(document).ready(function () {
         const $uv = $("<p>").text("UV Index: " + uvData.value);
         $(".city-card").append(
           $cityName,
+          $date,
           $cityImg,
           $temp,
           $humidity,
@@ -301,6 +305,7 @@ $(document).ready(function () {
         console.log(uvData);
         $(".city-card").empty();
         const $cityName = $("<h3>").text(cityData.name);
+        const $date = $('<h4>').text(moment().format("dddd, MMMM Do"));
         const $cityImg = $("<img>").attr("src", iconURL);
         $cityImg.addClass("city-icon");
         const $temp = $("<p>").text("Temp: " + cityData.main.temp + "°F");
@@ -313,6 +318,7 @@ $(document).ready(function () {
         const $uv = $("<p>").text("UV Index: " + uvData.value);
         $(".city-card").append(
           $cityName,
+          $date,
           $cityImg,
           $temp,
           $humidity,
