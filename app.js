@@ -73,7 +73,7 @@ $(document).ready(function () {
         console.log(uvData);
         $(".city-card").empty();
         const $cityName = $("<h3>").text(cityData.name);
-        const $date = $('<h4>').text(moment().format("dddd, MMMM Do"));
+        const $date = $('<h4>').text(moment().format("dddd, MMMM Do YYYY"));
         const $cityImg = $("<img>").attr("src", iconURL);
         $cityImg.addClass("city-icon");
         const $temp = $("<p>").text("Temp: " + cityData.main.temp + "°F");
@@ -114,11 +114,11 @@ $(document).ready(function () {
     }).then(function (fiveDayData) {
       console.log(fiveDayData);
       $(".weather-card").empty();
-      const day1Date = $("<h5>").text(fiveDayData.list[0].dt_txt.slice(5, 10));
-      const day2Date = $("<h5>").text(fiveDayData.list[8].dt_txt.slice(5, 10));
-      const day3Date = $("<h5>").text(fiveDayData.list[16].dt_txt.slice(5, 10));
-      const day4Date = $("<h5>").text(fiveDayData.list[24].dt_txt.slice(5, 10));
-      const day5Date = $("<h5>").text(fiveDayData.list[32].dt_txt.slice(5, 10));
+      const day1Date = $("<h5>").text(moment().add(1, 'days').format('l'));
+      const day2Date = $("<h5>").text(moment().add(2, 'days').format('l'));
+      const day3Date = $("<h5>").text(moment().add(3, 'days').format('l'));
+      const day4Date = $("<h5>").text(moment().add(4, 'days').format('l'));
+      const day5Date = $("<h5>").text(moment().add(5, 'days').format('l'));
       const day1IconCode = fiveDayData.list[0].weather[0].icon;
       const day2IconCode = fiveDayData.list[8].weather[0].icon;
       const day3IconCode = fiveDayData.list[16].weather[0].icon;
@@ -200,7 +200,7 @@ $(document).ready(function () {
         console.log(uvData);
         $(".city-card").empty();
         const $cityName = $("<h3>").text(cityData.name);
-        const $date = $('<h4>').text(moment().format("dddd, MMMM Do"));
+        const $date = $('<h4>').text(moment().format("dddd, MMMM Do YYYY"));
         const $cityImg = $("<img>").attr("src", iconURL);
         $cityImg.addClass("city-icon");
         const $temp = $("<p>").text("Temp: " + cityData.main.temp + "°F");
@@ -241,11 +241,11 @@ $(document).ready(function () {
     }).then(function (fiveDayData) {
       console.log(fiveDayData);
       $(".weather-card").empty();
-      const day1Date = $("<h5>").text(fiveDayData.list[0].dt_txt.slice(5, 10));
-      const day2Date = $("<h5>").text(fiveDayData.list[8].dt_txt.slice(5, 10));
-      const day3Date = $("<h5>").text(fiveDayData.list[16].dt_txt.slice(5, 10));
-      const day4Date = $("<h5>").text(fiveDayData.list[24].dt_txt.slice(5, 10));
-      const day5Date = $("<h5>").text(fiveDayData.list[32].dt_txt.slice(5, 10));
+      const day1Date = $("<h5>").text(moment().add(1, 'days').format('l'));
+      const day2Date = $("<h5>").text(moment().add(2, 'days').format('l'));
+      const day3Date = $("<h5>").text(moment().add(3, 'days').format('l'));
+      const day4Date = $("<h5>").text(moment().add(4, 'days').format('l'));
+      const day5Date = $("<h5>").text(moment().add(5, 'days').format('l'));
       const day1IconCode = fiveDayData.list[0].weather[0].icon;
       const day2IconCode = fiveDayData.list[8].weather[0].icon;
       const day3IconCode = fiveDayData.list[16].weather[0].icon;
@@ -327,7 +327,7 @@ $(document).ready(function () {
         console.log(uvData);
         $(".city-card").empty();
         const $cityName = $("<h3>").text(cityData.name);
-        const $date = $('<h4>').text(moment().format("dddd, MMMM Do"));
+        const $date = $('<h4>').text(moment().format("dddd, MMMM Do YYYY"));
         const $cityImg = $("<img>").attr("src", iconURL);
         $cityImg.addClass("city-icon");
         const $temp = $("<p>").text("Temp: " + cityData.main.temp + "°F");
@@ -368,11 +368,11 @@ $(document).ready(function () {
     }).then(function (fiveDayData) {
       console.log(fiveDayData);
       $(".weather-card").empty();
-      const day1Date = $("<h5>").text(fiveDayData.list[0].dt_txt.slice(5, 10));
-      const day2Date = $("<h5>").text(fiveDayData.list[8].dt_txt.slice(5, 10));
-      const day3Date = $("<h5>").text(fiveDayData.list[16].dt_txt.slice(5, 10));
-      const day4Date = $("<h5>").text(fiveDayData.list[24].dt_txt.slice(5, 10));
-      const day5Date = $("<h5>").text(fiveDayData.list[32].dt_txt.slice(5, 10));
+      const day1Date = $("<h5>").text(moment().add(1, 'days').format('l'));
+      const day2Date = $("<h5>").text(moment().add(2, 'days').format('l'));
+      const day3Date = $("<h5>").text(moment().add(3, 'days').format('l'));
+      const day4Date = $("<h5>").text(moment().add(4, 'days').format('l'));
+      const day5Date = $("<h5>").text(moment().add(5, 'days').format('l'));
       const day1IconCode = fiveDayData.list[0].weather[0].icon;
       const day2IconCode = fiveDayData.list[8].weather[0].icon;
       const day3IconCode = fiveDayData.list[16].weather[0].icon;
