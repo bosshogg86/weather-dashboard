@@ -4,22 +4,23 @@ $(document).ready(function () {
   const $cityName = $("#search-box");
   const APIKey = "c82e07f31254ca48265cc271c0642dc7";
 
-  // Set default city
+  // Set stored or default city
   init();
 
+  // Save search term
   function storeInput() {
     userInputs.push(cityName);
     console.log(userInputs);
     localStorage.setItem("userInput", JSON.stringify(userInputs));
   }
 
+  // Render saved searcj terms
   function renderInputs() {
     $(".list-group").empty();
     userInputs.forEach(function (cityName) {
       const userInput = $("<li>");
       userInput.text(cityName);
       userInput.addClass("list-group-item");
-      // userInput.attr("href", "#search-button");
       userInput.attr("value", cityName);
       $(".list-group").append(userInput);
     });
@@ -35,7 +36,7 @@ $(document).ready(function () {
     } else {
       cityName = "San Francisco";
     }
-    
+
     const cityURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}&units=imperial`;
     const fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${APIKey}&units=imperial`;
 
@@ -140,14 +141,14 @@ $(document).ready(function () {
       $("#day3").append(day3Date, day3Img, day3Temp, day3Humid);
       $("#day4").append(day4Date, day4Img, day4Temp, day4Humid);
       $("#day5").append(day5Date, day5Img, day5Temp, day5Humid);
-      renderInputs()
+      renderInputs();
     });
   }
 
   // Search history click
-  $(".list-group").click(function(event) {
+  $(".list-group").click(function (event) {
     // console.log(event.target.getAttribute('value'));
-    cityName = event.target.getAttribute('value');
+    cityName = event.target.getAttribute("value");
     console.log(cityName);
     const cityURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}&units=imperial`;
     const fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${APIKey}&units=imperial`;
@@ -255,7 +256,6 @@ $(document).ready(function () {
       renderInputs();
       $cityName.val("");
     });
-
   });
 
   // Search Box sets city
@@ -370,5 +370,4 @@ $(document).ready(function () {
       $cityName.val("");
     });
   });
-
 });
