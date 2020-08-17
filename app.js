@@ -8,21 +8,29 @@ $(document).ready(function () {
   init();
 
   // Save search term
-  function storeInput() {
-    userInputs.push(cityName);
-    console.log(userInputs);
-    localStorage.setItem("userInput", JSON.stringify(userInputs));
+  function storeInput() {    
+    userInputs = JSON.parse(localStorage.getItem("userInput")) || [];
+    let set =new Set(userInputs)
+    set.add(cityName)
+    const toArr=Array.from(set)
+    localStorage.setItem("userInput",JSON.stringify(toArr))
+    // userInputs.push(cityName);
+    // console.log(userInputs);
+    // localStorage.setItem("userInput", JSON.stringify(userInputs));
   }
 
-  // Render saved searcj terms
+  // Render saved search terms
   function renderInputs() {
-    $(".list-group").empty();
-    userInputs.forEach(function (cityName) {
+    $(".history").empty();
+      userInputs = [];
+      const savedInputs = JSON.parse(localStorage.getItem("userInput"));
+      userInputs.push(...savedInputs);
+      userInputs.forEach(function(cityName) {
       const userInput = $("<li>");
       userInput.text(cityName);
       userInput.addClass("list-group-item");
       userInput.attr("value", cityName);
-      $(".list-group").append(userInput);
+      $(".history").append(userInput);
     });
   }
 
