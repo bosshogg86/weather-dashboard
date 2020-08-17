@@ -45,6 +45,7 @@ $(document).ready(function () {
       url: cityURL,
       method: "GET",
     }).then(function (cityData) {
+      console.log(cityData);
       const iconCode = cityData.weather[0].icon;
       const iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
       const lat = cityData.coord.lat;
@@ -85,6 +86,7 @@ $(document).ready(function () {
       url: fiveDayURL,
       method: "GET",
     }).then(function (fiveDayData) {
+      console.log(fiveDayData);
       $(".weather-card").empty();
       const day1Date = $("<h5>").text(fiveDayData.list[4].dt_txt.slice(5, 10));
       const day2Date = $("<h5>").text(fiveDayData.list[12].dt_txt.slice(5, 10));
@@ -157,6 +159,7 @@ $(document).ready(function () {
       url: cityURL,
       method: "GET",
     }).then(function (cityData) {
+      console.log(cityData);
       const iconCode = cityData.weather[0].icon;
       const iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
       const lat = cityData.coord.lat;
@@ -197,6 +200,7 @@ $(document).ready(function () {
       url: fiveDayURL,
       method: "GET",
     }).then(function (fiveDayData) {
+      console.log(fiveDayData);
       $(".weather-card").empty();
       const day1Date = $("<h5>").text(fiveDayData.list[4].dt_txt.slice(5, 10));
       const day2Date = $("<h5>").text(fiveDayData.list[12].dt_txt.slice(5, 10));
@@ -269,6 +273,7 @@ $(document).ready(function () {
       url: cityURL,
       method: "GET",
     }).then(function (cityData) {
+      console.log(cityData);
       const iconCode = cityData.weather[0].icon;
       const iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
       const lat = cityData.coord.lat;
@@ -309,6 +314,7 @@ $(document).ready(function () {
       url: fiveDayURL,
       method: "GET",
     }).then(function (fiveDayData) {
+      console.log(fiveDayData);
       $(".weather-card").empty();
       const day1Date = $("<h5>").text(fiveDayData.list[4].dt_txt.slice(5, 10));
       const day2Date = $("<h5>").text(fiveDayData.list[12].dt_txt.slice(5, 10));
