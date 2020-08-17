@@ -21,7 +21,8 @@ $(document).ready(function () {
 
   // Render saved search terms
   function renderInputs() {
-    $(".history").empty();
+    if(localStorage.getItem("userInput")){
+      $(".history").empty();
       userInputs = [];
       const savedInputs = JSON.parse(localStorage.getItem("userInput"));
       userInputs.push(...savedInputs);
@@ -32,6 +33,10 @@ $(document).ready(function () {
       userInput.attr("value", cityName);
       $(".history").append(userInput);
     });
+    } else {
+      console.log('No stored cities')
+    }
+      
   }
 
   // Sets default city to stored search, if none SF default
