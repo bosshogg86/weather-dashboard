@@ -60,7 +60,7 @@ $(document).ready(function () {
     }).then(function (cityData) {
       console.log(cityData);
       const iconCode = cityData.weather[0].icon;
-      const iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
+      const iconURL = `https://openweathermap.org/img/w/${iconCode}.png`;
       const lat = cityData.coord.lat;
       const lon = cityData.coord.lon;
       const uvURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${lon}`;
@@ -124,11 +124,11 @@ $(document).ready(function () {
       const day3IconCode = fiveDayData.list[16].weather[0].icon;
       const day4IconCode = fiveDayData.list[24].weather[0].icon;
       const day5IconCode = fiveDayData.list[32].weather[0].icon;
-      const day1IconURL = `http://openweathermap.org/img/w/${day1IconCode}.png`;
-      const day2IconURL = `http://openweathermap.org/img/w/${day2IconCode}.png`;
-      const day3IconURL = `http://openweathermap.org/img/w/${day3IconCode}.png`;
-      const day4IconURL = `http://openweathermap.org/img/w/${day4IconCode}.png`;
-      const day5IconURL = `http://openweathermap.org/img/w/${day5IconCode}.png`;
+      const day1IconURL = `https://openweathermap.org/img/w/${day1IconCode}.png`;
+      const day2IconURL = `https://openweathermap.org/img/w/${day2IconCode}.png`;
+      const day3IconURL = `https://openweathermap.org/img/w/${day3IconCode}.png`;
+      const day4IconURL = `https://openweathermap.org/img/w/${day4IconCode}.png`;
+      const day5IconURL = `https://openweathermap.org/img/w/${day5IconCode}.png`;
       const day1Img = $("<img>").attr("src", day1IconURL);
       const day2Img = $("<img>").attr("src", day2IconURL);
       const day3Img = $("<img>").attr("src", day3IconURL);
@@ -187,7 +187,7 @@ $(document).ready(function () {
     }).then(function (cityData) {
       console.log(cityData);
       const iconCode = cityData.weather[0].icon;
-      const iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
+      const iconURL = `https://openweathermap.org/img/w/${iconCode}.png`;
       const lat = cityData.coord.lat;
       const lon = cityData.coord.lon;
       const uvURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${lon}`;
@@ -251,11 +251,11 @@ $(document).ready(function () {
       const day3IconCode = fiveDayData.list[16].weather[0].icon;
       const day4IconCode = fiveDayData.list[24].weather[0].icon;
       const day5IconCode = fiveDayData.list[32].weather[0].icon;
-      const day1IconURL = `http://openweathermap.org/img/w/${day1IconCode}.png`;
-      const day2IconURL = `http://openweathermap.org/img/w/${day2IconCode}.png`;
-      const day3IconURL = `http://openweathermap.org/img/w/${day3IconCode}.png`;
-      const day4IconURL = `http://openweathermap.org/img/w/${day4IconCode}.png`;
-      const day5IconURL = `http://openweathermap.org/img/w/${day5IconCode}.png`;
+      const day1IconURL = `https://openweathermap.org/img/w/${day1IconCode}.png`;
+      const day2IconURL = `https://openweathermap.org/img/w/${day2IconCode}.png`;
+      const day3IconURL = `https://openweathermap.org/img/w/${day3IconCode}.png`;
+      const day4IconURL = `https://openweathermap.org/img/w/${day4IconCode}.png`;
+      const day5IconURL = `https://openweathermap.org/img/w/${day5IconCode}.png`;
       const day1Img = $("<img>").attr("src", day1IconURL);
       const day2Img = $("<img>").attr("src", day2IconURL);
       const day3Img = $("<img>").attr("src", day3IconURL);
@@ -314,7 +314,7 @@ $(document).ready(function () {
     }).then(function (cityData) {
       console.log(cityData);
       const iconCode = cityData.weather[0].icon;
-      const iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
+      const iconURL = `https://openweathermap.org/img/w/${iconCode}.png`;
       const lat = cityData.coord.lat;
       const lon = cityData.coord.lon;
       const uvURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${lon}`;
@@ -378,11 +378,11 @@ $(document).ready(function () {
       const day3IconCode = fiveDayData.list[16].weather[0].icon;
       const day4IconCode = fiveDayData.list[24].weather[0].icon;
       const day5IconCode = fiveDayData.list[32].weather[0].icon;
-      const day1IconURL = `http://openweathermap.org/img/w/${day1IconCode}.png`;
-      const day2IconURL = `http://openweathermap.org/img/w/${day2IconCode}.png`;
-      const day3IconURL = `http://openweathermap.org/img/w/${day3IconCode}.png`;
-      const day4IconURL = `http://openweathermap.org/img/w/${day4IconCode}.png`;
-      const day5IconURL = `http://openweathermap.org/img/w/${day5IconCode}.png`;
+      const day1IconURL = `https://openweathermap.org/img/w/${day1IconCode}.png`;
+      const day2IconURL = `https://openweathermap.org/img/w/${day2IconCode}.png`;
+      const day3IconURL = `https://openweathermap.org/img/w/${day3IconCode}.png`;
+      const day4IconURL = `https://openweathermap.org/img/w/${day4IconCode}.png`;
+      const day5IconURL = `https://openweathermap.org/img/w/${day5IconCode}.png`;
       const day1Img = $("<img>").attr("src", day1IconURL);
       const day2Img = $("<img>").attr("src", day2IconURL);
       const day3Img = $("<img>").attr("src", day3IconURL);
