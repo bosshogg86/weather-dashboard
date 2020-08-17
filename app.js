@@ -84,6 +84,16 @@ $(document).ready(function () {
           "Wind Speed: " + cityData.wind.speed + " MPH"
         );
         const $uv = $("<p>").text("UV Index: " + uvData.value);
+        $uv.css("max-width", "fit-content");
+          if(uvData.value >= 8){
+            $uv.css("background-color", "red");
+          } else if(uvData.value >= 6) {
+            $uv.css("background-color", "orange");
+          } else if(uvData.value >= 3) {
+            $uv.css("background-color", "yellow");
+          } else {
+            $uv.css("background-color", "green");
+          }
         $(".city-card").append(
           $cityName,
           $date,
@@ -200,6 +210,16 @@ $(document).ready(function () {
           "Wind Speed: " + cityData.wind.speed + " MPH"
         );
         const $uv = $("<p>").text("UV Index: " + uvData.value);
+        $uv.css("max-width", "fit-content");
+          if(uvData.value >= 8){
+            $uv.css("background-color", "red");
+          } else if(uvData.value >= 6) {
+            $uv.css("background-color", "orange");
+          } else if(uvData.value >= 3) {
+            $uv.css("background-color", "yellow");
+          } else {
+            $uv.css("background-color", "green");
+          }
         $(".city-card").append(
           $cityName,
           $date,
@@ -316,6 +336,16 @@ $(document).ready(function () {
           "Wind Speed: " + cityData.wind.speed + " MPH"
         );
         const $uv = $("<p>").text("UV Index: " + uvData.value);
+        $uv.css("max-width", "fit-content");
+          if(uvData.value >= 8){
+            $uv.css("background-color", "red");
+          } else if(uvData.value >= 6) {
+            $uv.css("background-color", "orange");
+          } else if(uvData.value >= 3) {
+            $uv.css("background-color", "yellow");
+          } else {
+            $uv.css("background-color", "green");
+          }
         $(".city-card").append(
           $cityName,
           $date,
