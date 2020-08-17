@@ -36,10 +36,11 @@ h3 {
 
 .weather-card {
     color: #f8f9fa;
-    margin: 1rem;
+    margin: auto;
     text-align: center;
     max-width: fit-content;
     max-height: fit-content;
+    display: inline-block;
 }
 
 .list-group {
