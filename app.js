@@ -84,6 +84,7 @@ $(document).ready(function () {
           "Wind Speed: " + cityData.wind.speed + " MPH"
         );
         const $uv = $("<p>").text("UV Index: " + uvData.value);
+        $uv.addClass("city-uv");
         $uv.css("max-width", "fit-content");
           if(uvData.value >= 8){
             $uv.css("background-color", "red");
@@ -210,6 +211,7 @@ $(document).ready(function () {
           "Wind Speed: " + cityData.wind.speed + " MPH"
         );
         const $uv = $("<p>").text("UV Index: " + uvData.value);
+        $uv.addClass("city-uv");
         $uv.css("max-width", "fit-content");
           if(uvData.value >= 8){
             $uv.css("background-color", "red");
@@ -336,6 +338,7 @@ $(document).ready(function () {
           "Wind Speed: " + cityData.wind.speed + " MPH"
         );
         const $uv = $("<p>").text("UV Index: " + uvData.value);
+        $uv.addClass("city-uv");
         $uv.css("max-width", "fit-content");
           if(uvData.value >= 8){
             $uv.css("background-color", "red");
