@@ -70,6 +70,7 @@ $(document).ready(function () {
     $cityName.val("");
   });
 
+  // Calls 3 APIs and renders to the page
   function apiCall(cityName) {
     const cityURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}&units=imperial`;
     const fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${APIKey}&units=imperial`;
